@@ -1,16 +1,12 @@
-## Hi there 👋
+# Workshop GitHub – DSI3
 
-<!--
-**DSI3-202601-SVOROA/DSI3-202601-SVOROA** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Comandos básicos de GitHub
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- git init: inicializa un repositorio
+- git status: muestra el estado del proyecto
+- git add .: agrega archivos al commit
+- git commit -m "mensaje": guarda cambios
+- git branch: muestra ramas
+- git checkout -b rama: crea una rama nueva
+- git push: sube cambios al repositorio
+- git pull: trae cambios del repositorio
