@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aroma & Grano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header" id="top" role="banner">
+    <div class="header__logo">Aroma &amp; Grano</div>
+    <div class="header__nav-actions">
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__menu">
+          <li class="header__item"><a class="header__link" href="#favoritos">Menú</a></li>
+          <li class="header__item"><a class="header__link" href="#nosotros">Nosotros</a></li>
+
+          <!-- ⭐ CAMBIO HECHO AQUÍ -->
+          <li class="header__item"><a class="header__link" href="#newsletter">Servicios</a></li>
+
+          <li class="header__item"><a class="header__link" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="header__btn" href="#favoritos">Pedir Online</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Sección principal">
+    <img class="hero__img" src="cafe 1.png" alt="Café de especialidad sobre mesa de madera">
+    <div class="hero__content">
+      <h1 class="hero__title">Más que café, un ritual.</h1>
+      <p class="hero__subtitle">
+        Descubre el origen, el proceso, la pasión en cada taza.<br>
+        Tu refugio diario en la soledad.
+      </p>
+      <a class="hero__btn" href="#favoritos">Explorar Menú</a>
+    </div>
+  </section>
+
+  <section class="favorites" id="favoritos" aria-labelledby="favorites-title">
+    <div class="favorites__inner">
+      <h2 class="favorites__title" id="favorites-title">Nuestros Favoritos de Temporada</h2>
+      <div class="favorites__carousel">
+        <button class="favorites__arrow favorites__arrow--prev" aria-label="Anterior" type="button">‹</button>
+        <div class="favorites__viewport" tabindex="0" aria-live="polite">
+          <div class="favorites__track">
+            
+            <article class="favorites__slide card">
+              <img class="card__image" src="cold.jfif" alt="Cold Brew">
+              <div class="card__body">
+                <h3 class="card__title">Cold Brew</h3>
+                <p class="card__desc">Extracción en frío con notas a cacao suave.</p>
+                <p class="card__price">$15.000</p>
+              </div>
+            </article>
+
+            <article class="favorites__slide card">
+              <img class="card__image" src="latte.jfif" alt="Latte de Vainilla">
+              <div class="card__body">
+                <h3 class="card__title">Latte de Vainilla</h3>
+                <p class="card__desc">Cremoso y balanceado, con vainilla natural.</p>
+                <p class="card__price">$15.000</p>
+              </div>
+            </article>
+
+            <article class="favorites__slide card">
+              <img class="card__image" src="torta.jpg" alt="Torta de Chocolate">
+              <div class="card__body">
+                <h3 class="card__title">Torta de Chocolate</h3>
+                <p class="card__desc">Bizcocho esponjoso y húmedo con cobertura de chocolate.</p>
+                <p class="card__price">$18.000</p>
+              </div>
+            </article>
+
+            <article class="favorites__slide card">
+              <img class="card__image" src="te.png" alt="Té">
+              <div class="card__body">
+                <h3 class="card__title">Té Helado</h3>
+                <p class="card__desc">Infusión fría 24h con notas de naranja fresca.</p>
+                <p class="card__price">$15.000</p>
+              </div>
+            </article>
+
+            <article class="favorites__slide card">
+              <img class="card__image" src="capuchino.png" alt="Capuchino">
+              <div class="card__body">
+                <h3 class="card__title">Capuchino</h3>
+                <p class="card__desc">Espresso con leche vaporizada y espuma cremosa.</p>
+                <p class="card__price">$15.000</p>
+              </div>
+            </article>
+
+            <article class="favorites__slide card">
+              <img class="card__image" src="moca.png" alt="Moca">
+              <div class="card__body">
+                <h3 class="card__title">Moca</h3>
+                <p class="card__desc">Espresso con leche vaporizada y toque de cacao.</p>
+                <p class="card__price">$16.000</p>
+              </div>
+            </article>
+
+            <article class="favorites__slide card">
+              <img class="card__image" src="croasan.png" alt="Croassan">
+              <div class="card__body">
+                <h3 class="card__title">Croissant de Almendras </h3>
+                <p class="card__desc">Postre hojaldrado relleno de una exquisita crema de almendras.</p>
+                <p class="card__price">$10.000</p>
+              </div>
+            </article>
+
+            <article class="favorites__slide card">
+              <img class="card__image" src="pan de banano.jpg" alt="Pan de Banano">
+              <div class="card__body">
+                <h3 class="card__title">Pan de Banano</h3>
+                <p class="card__desc">Horneado diario con nueces tostadas.</p>
+                <p class="card__price">$9.000</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <button class="favorites__arrow favorites__arrow--next" aria-label="Siguiente" type="button">›</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="nosotros" aria-labelledby="about-title">
+    <div class="about__inner">
+      <img class="about__image" src="granos.png" alt="Granos de café tostado">
+
+      <div class="about__content">
+        <h2 class="about__title" id="about-title">Del Origen a Tu Taza</h2>
+
+        <p class="about__text">
+          Trabajamos con café de comercio directo, seleccionado cuidadosamente
+          junto a productores que comparten nuestra pasión por la calidad y el 
+          origen. Cada grano cuenta una historia: desde la finca hasta tu taza.
+          En Aroma &amp; Grano, tostamos el café de manera artesanal, respetando sus 
+          perfiles naturales para resaltar notas únicas, aromas profundos y una 
+          experiencia auténtica en cada sorbo.
+        </p>
+
+        <ul class="about__list">
+          <li class="about__item">
+            <img class="about__icon" src="grano cafe.png" alt="">
+            <span>Café de especialidad</span>
+          </li>
+          <li class="about__item">
+            <img class="about__icon" src="grano cafe.png" alt="">
+            <span>Panadería artesanal</span>
+          </li>
+          <li class="about__item">
+            <img class="about__icon" src="grano cafe.png" alt="">
+            <span>Espacio de coworking</span>
+          </li>
+        </ul>
+
+        <a class="about__link" href="#nosotros">Conoce nuestra historia completa →</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    const viewport = document.querySelector(".favorites__viewport");
+    const prevBtn  = document.querySelector(".favorites__arrow--prev");
+    const nextBtn  = document.querySelector(".favorites__arrow--next");
+
+    if (!viewport || !prevBtn || !nextBtn) return;
+
+    const STEP = 350;
+
+    prevBtn.addEventListener("click", () => {
+      viewport.scrollBy({ left: -STEP, behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      viewport.scrollBy({ left: STEP, behavior: "smooth" });
+    });
+  })();
+  </script>
+
+  <section class="signup" id="newsletter" aria-labelledby="signup-title">
+    <div class="signup__inner">
+      <header class="signup__header">
+        <h2 class="signup__title" id="signup-title">No te pierdas el próximo tueste</h2>
+        <p class="signup__subtitle">
+          Recibe ofertas exclusivas, lanzamientos especiales y noticias sobre nuestros cafés de origen.<br>
+          Sé parte de nuestra comunidad cafetera.
+        </p>
+      </header>
+
+      <form class="signup__form" action="#" method="post" novalidate>
+        <label class="sr-only" for="name">Nombre</label>
+        <input class="signup__input" type="text" id="name" name="name" placeholder="Nombre..." required>
+
+        <label class="sr-only" for="phone">Teléfono</label>
+        <input class="signup__input" type="tel" id="phone" name="phone" placeholder="Teléfono..." inputmode="tel">
+
+        <label class="sr-only" for="email">Correo electrónico</label>
+        <input class="signup__input signup__input--wide" type="email" id="email" name="email" placeholder="Tu correo electrónico..." required>
+
+        <button class="signup__btn" type="submit" aria-label="Suscribirme">Suscribirme</button>
+      </form>
+
+      <p class="signup__legal">Respetamos tu privacidad</p>
+    </div>
+  </section>
+
+  <!-- ⭐ EL FOOTER AHORA TIENE id="contacto" -->
+  <footer class="footer" id="contacto" role="contentinfo">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <span class="footer__logo-line">Aroma</span>
+          <span class="footer__logo-line">&amp; Grano</span>
+        </div>
+
+        <p class="footer__tagline">
+          Descubre el origen, el proceso y<br>
+          la pasión en cada taza. Tu refugio<br>
+          diario en la ciudad.
+        </p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Explorar">
+        <h3 class="footer__heading">Explorar</h3>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="#favoritos">Menú</a></li>
+          <li><a class="footer__link" href="#nosotros">Nuestra Historia</a></li>
+
+          <!-- ⭐ CAMBIO HECHO AQUÍ -->
+          <li><a class="footer__link" href="#newsletter">Servicios</a></li>
+
+          <li><a class="footer__link" href="#cowork">Espacio Coworking</a></li>
+          <li><a class="footer__link" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__visit">
+        <h3 class="footer__heading">Visítanos</h3>
+
+        <ul class="footer__contact">
+          <li class="footer__contact-item">
+            <img class="footer__icon" src="ubicacion.png" alt="">
+            <span>Universidad del Bosque</span>
+          </li>
+
+          <li class="footer__contact-item">
+            <img class="footer__icon" src="correo.png" alt="">
+            <a class="footer__link footer__link--contact" href="mailto:aroma&grano@cafeteria.gov.co">
+              aroma&amp;grano@cafeteria.gov.co
+            </a>
+          </li>
+
+          <li class="footer__contact-item">
+            <img class="footer__icon" src="telefono.png" alt="">
+            <a class="footer__link footer__link--contact" href="tel:+573209508325">
+              3209508325
+            </a>
+          </li>
+        </ul>
+
+        <div class="footer__social">
+          <img class="footer__img" src="instagram.png" alt="Instagram">
+          <img class="footer__img" src="whatsapp.png" alt="Whatsapp">
+          <img class="footer__img" src="facebook.png" alt="Facebook">
+          <img class="footer__img" src="tiktok.png" alt="Tiktok">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <div class="footer__bar-inner">
+        <p class="footer__copy">@ 2026 Aroma & Grano. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
