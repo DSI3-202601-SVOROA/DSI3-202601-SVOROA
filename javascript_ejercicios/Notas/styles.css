@@ -1,0 +1,81 @@
+body {
+  background-color: #f0f4ff;
+  font-family: sans-serif;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #5c7cfa;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 620px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+input[type="number"] {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 4px;
+  width: 90px;
+}
+
+button {
+  background: #bfcfff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.fila-estudiante {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.nombre-estudiante {
+  width: 110px;
+  font-weight: 600;
+  color: #5c7cfa;
+}
+
+.resultado-estudiante {
+  font-weight: 700;
+  color: #5c7cfa;
+  margin-left: 8px;
+}
+
+.btn-calcular {
+  width: 100%;
+  max-width: 620px;
+  background: #5c7cfa;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.fila-estudiante label {
+  font-size: 0.82rem;
+  color: #718096;
+  white-space: nowrap;
+}
+
+#contenedorCalcular {
+  width: 100%;
+  max-width: 620px;
+}
