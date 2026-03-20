@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora de Notas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h1>Calculadora de Notas</h1>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Calificación</th>
+          <th>1 (5%)</th>
+          <th>2 (10%)</th>
+          <th>3 (10%)</th>
+          <th>4 (10%)</th>
+          <th>5 (15%)</th>
+          <th>6 (15%)</th>
+          <th>7 (15%)</th>
+          <th>8 (20%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nota</td>
+          <td><input type="number" min="0" max="5" step="0.1" id="n1" placeholder="0-5" /></td>
+          <td><input type="number" min="0" max="5" step="0.1" id="n2" placeholder="0-5" /></td>
+          <td><input type="number" min="0" max="5" step="0.1" id="n3" placeholder="0-5" /></td>
+          <td><input type="number" min="0" max="5" step="0.1" id="n4" placeholder="0-5" /></td>
+          <td><input type="number" min="0" max="5" step="0.1" id="n5" placeholder="0-5" /></td>
+          <td><input type="number" min="0" max="5" step="0.1" id="n6" placeholder="0-5" /></td>
+          <td><input type="number" min="0" max="5" step="0.1" id="n7" placeholder="0-5" /></td>
+          <td><input type="number" min="0" max="5" step="0.1" id="n8" placeholder="0-5" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" onclick="calcular()">Calcular nota final</button>
+    <p id="resultado">—</p>
+  </div>
+
+  <script src="calculadora.js"></script>
+</body>
+</html>
