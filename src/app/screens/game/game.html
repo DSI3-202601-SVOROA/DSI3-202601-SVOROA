@@ -1,0 +1,36 @@
+<h1>Bienvenido al juego de la copa mundial</h1>
+<app-header
+    [title]="'Quien ganara el juego?'"
+    [description]="'Descubre quien sera el ganador del juego'"
+    [label]="'Descubrelo aqui'"
+    [actionName]="'Descubrir'"
+    (elements)="generateElements($event)"
+    ></app-header>
+
+   @if (elements > 0) {
+    <h4>Cantidad de juegos</h4>
+    <p>Ingrese en cada opcion el ganador</p>
+
+    <div class="selects">
+      @for (item of options; track $index) {
+          <div>
+            <label> {{$index + 1 }} </label>
+            <select [(ngModel)]="options[$index]" >
+                <option value="">Seleccione un</option>
+                @for(jugador of jugadores; track $index; let j = $index) {
+                    <option value="{{jugador}}"> {{jugador}} </option>
+                }
+            </select>
+          </div>
+      }
+    </div>
+
+    <button (click)="calculateWinner()">Calcular ganador</button>
+
+    @if(ganador != ""){
+        <h1>El ganador es: {{ganador}}</h1>
+    }
+
+} @else {
+    <p>Se debe primero ingresar la cantidad de juegos</p>
+}
