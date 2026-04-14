@@ -1,0 +1,49 @@
+.select-field { display: flex; flex-direction: column; gap: 6px; }
+
+.select-field__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8B8FC7;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.select-field__wrapper { position: relative; }
+
+.select-field__select {
+  width: 100%;
+  padding: 13px 40px 13px 16px;
+  border: 2px solid #E8ECFF;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  color: #2D2D5E;
+  background: #F8F9FF;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.select-field__select:focus {
+  border-color: #6C63FF;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.select-field--error .select-field__select {
+  border-color: #FF4757;
+  background: #FFF0F1;
+}
+
+.select-field__arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6C63FF;
+  pointer-events: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
