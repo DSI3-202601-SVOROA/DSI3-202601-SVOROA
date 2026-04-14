@@ -1,0 +1,18 @@
+<form class="register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <app-register-header
+    title="Crear cuenta"
+    subtitle="Completa el formulario"
+  ></app-register-header>
+
+  <app-personal-data-form
+    [parentForm]="registerForm"
+  ></app-personal-data-form>
+
+  <app-form-actions
+    buttonLabel="Registrarse"
+    [loading]="loading"
+    prefixText="¿Ya tienes cuenta?"
+    linkText="Inicia sesión"
+    linkPath="/auth/login"
+  ></app-form-actions>
+</form>

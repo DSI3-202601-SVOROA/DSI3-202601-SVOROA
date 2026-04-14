@@ -1,0 +1,9 @@
+<button
+  class="btn"
+  [type]="type"
+  [disabled]="loading || disabled"
+  (click)="onClick()"
+>
+  <span *ngIf="loading" class="btn__spinner"></span>
+  <span>{{ loading ? 'Cargando...' : label }}</span>
+</button>
