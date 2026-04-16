@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular_I": {
+    "coffee": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -26,69 +26,6 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "angular_I:build:production"
-            },
-            "development": {
-              "buildTarget": "angular_I:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test"
-        }
-      }
-    },
-    "coffee": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/coffee",
-      "sourceRoot": "projects/coffee/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:application",
-          "options": {
-            "browser": "projects/coffee/src/main.ts",
-            "tsConfig": "projects/coffee/tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/coffee/public"
-              }
-            ],
-            "styles": [
-              "projects/coffee/src/styles.css"
             ]
           },
           "configurations": {

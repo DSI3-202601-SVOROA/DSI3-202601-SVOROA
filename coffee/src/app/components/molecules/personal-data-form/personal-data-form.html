@@ -1,0 +1,53 @@
+<div class="personal-data-form" [formGroup]="parentForm">
+
+  <div class="personal-data-form__row">
+    <app-input-field
+      label="Cédula"
+      placeholder="1234567890"
+      type="text"
+      formControlName="cedula"
+      [hasError]="isInvalid('cedula')"
+    ></app-input-field>
+
+    <app-input-field
+      label="Nombre"
+      placeholder="Sara"
+      type="text"
+      formControlName="nombre"
+      [hasError]="isInvalid('nombre')"
+    ></app-input-field>
+  </div>
+
+  <app-input-field
+    label="Apellidos"
+    placeholder="Orjuela Roa"
+    type="text"
+    formControlName="apellidos"
+    [hasError]="isInvalid('apellidos')"
+  ></app-input-field>
+
+  <app-input-field
+    label="Correo electrónico"
+    placeholder="usuario@elbosque.edu.co"
+    type="email"
+    formControlName="email"
+    [hasError]="isInvalid('email')"
+  ></app-input-field>
+
+  <app-select-field
+    label="Ciudad de residencia"
+    placeholder="Selecciona tu ciudad"
+    formControlName="ciudad"
+    [options]="ciudadOptions"
+    [hasError]="isInvalid('ciudad')"
+  ></app-select-field>
+
+  <app-input-field
+    label="Contraseña"
+    placeholder="••••••••"
+    type="password"
+    formControlName="password"
+    [hasError]="isInvalid('password')"
+  ></app-input-field>
+
+</div>
