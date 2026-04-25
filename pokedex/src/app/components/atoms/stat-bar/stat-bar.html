@@ -1,0 +1,12 @@
+<div class="stat-bar">
+  <div class="stat-bar__header">
+    <span class="stat-bar__name">{{ statName | uppercase }}</span>
+    <span class="stat-bar__value">{{ value }}</span>
+  </div>
+  <div class="stat-bar__track">
+    <div 
+      class="stat-bar__fill {{ getBarClass() }}"
+      [style.width.%]="getPercentage()">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="pokemon-gallery">
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="pokemon-gallery__loading">
+    <div class="spinner"></div>
+    <p>Cargando Pokémon...</p>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!isLoading && pokemons.length === 0" class="pokemon-gallery__empty">
+    <p>No se encontraron Pokémon</p>
+  </div>
+
+  <!-- Gallery Grid -->
+  <div *ngIf="!isLoading && pokemons.length > 0" class="pokemon-gallery__grid">
+    <app-pokemon-card
+      *ngFor="let pokemon of pokemons"
+      [pokemon]="pokemon"
+      (cardClick)="onPokemonClick($event)">
+    </app-pokemon-card>
+  </div>
+</div>

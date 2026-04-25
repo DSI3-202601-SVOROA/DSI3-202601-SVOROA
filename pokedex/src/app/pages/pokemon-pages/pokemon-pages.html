@@ -1,0 +1,165 @@
+<div class="container">
+  <!-- Angular PokeFinder -->
+  <div class="app-header">
+    <h1 class="app-title">Angular PokeFinder</h1>
+  </div>
+
+  <div class="two-columns">
+    
+    <!-- ============================================ -->
+    <!-- COLUMNA IZQUIERDA: POKEMON DETALLE -->
+    <!-- ============================================ -->
+    <div class="left-column">
+      <h2 class="main-title">POKEMON DETALLE</h2>
+
+      <!-- Buscador -->
+      <div class="search-section">
+        <div class="search-wrapper">
+          <input 
+            type="text" 
+            class="search-input"
+            [(ngModel)]="searchTerm"
+            placeholder="Busca por nombre o ID (ej: 25)..."
+            (keyup.enter)="onSearch()">
+          <button class="search-btn" (click)="onSearch()">
+            🔍 BUSCAR
+          </button>
+        </div>
+      </div>
+
+      <!-- Detalle del Pokémon -->
+      <div class="pokemon-card-white" *ngIf="selectedPokemon">
+        <!-- Imagen -->
+        <div class="pokemon-image">
+          <img [src]="selectedPokemon.sprites.front_default" [alt]="selectedPokemon.name">
+        </div>
+
+        <!-- Nombre + número -->
+        <div class="pokemon-title">
+          <span class="pokemon-name">{{ selectedPokemon.name | uppercase }}</span>
+          <span class="pokemon-number">#{{ selectedPokemon.id }}</span>
+        </div>
+
+        <!-- Tipos -->
+        <div class="pokemon-types">
+          <span *ngFor="let t of selectedPokemon.types" class="type-badge" [class]="'type-' + t.type.name">
+            {{ t.type.name | uppercase }}
+          </span>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="pokemon-stats">
+          <h3>ESTADISTICAS BASE</h3>
+          
+          <div class="stat-bar">
+            <span class="stat-name">HP</span>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" [style.width.%]="getStatPercentage('hp')"></div>
+            </div>
+            <span class="stat-value">{{ getStatValue('hp') }}</span>
+          </div>
+
+          <div class="stat-bar">
+            <span class="stat-name">ATAQUE</span>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" [style.width.%]="getStatPercentage('attack')"></div>
+            </div>
+            <span class="stat-value">{{ getStatValue('attack') }}</span>
+          </div>
+
+          <div class="stat-bar">
+            <span class="stat-name">DEFENSA</span>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" [style.width.%]="getStatPercentage('defense')"></div>
+            </div>
+            <span class="stat-value">{{ getStatValue('defense') }}</span>
+          </div>
+
+          <div class="stat-bar">
+            <span class="stat-name">AT ESPECIAL</span>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" [style.width.%]="getStatPercentage('special-attack')"></div>
+            </div>
+            <span class="stat-value">{{ getStatValue('special-attack') }}</span>
+          </div>
+
+          <div class="stat-bar">
+            <span class="stat-name">DEF ESPECIAL</span>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" [style.width.%]="getStatPercentage('special-defense')"></div>
+            </div>
+            <span class="stat-value">{{ getStatValue('special-defense') }}</span>
+          </div>
+
+          <div class="stat-bar">
+            <span class="stat-name">VELOCIDAD</span>
+            <div class="stat-bar-track">
+              <div class="stat-bar-fill" [style.width.%]="getStatPercentage('speed')"></div>
+            </div>
+            <span class="stat-value">{{ getStatValue('speed') }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- COLUMNA DERECHA: GALERÍA DE EXPLORACIÓN -->
+    <!-- ============================================ -->
+    <div class="right-column">
+      <h2 class="gallery-title">GALERÍA DE EXPLORACIÓN</h2>
+      
+      <!-- Loading -->
+      <div *ngIf="isLoading" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Cargando Pokémon...</p>
+      </div>
+      
+      <!-- Grid de Pokémon -->
+      <div class="pokemon-grid" *ngIf="!isLoading && !errorMessage && pokemons.length > 0">
+        <div *ngFor="let pokemon of pokemons" class="grid-card" (click)="onPokemonClick(pokemon)">
+          <div class="grid-image">
+            <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+          </div>
+          <div class="grid-number">#{{ pokemon.id | number:'3.0-0' }}</div>
+          <div class="grid-name">{{ pokemon.name | uppercase }}</div>
+          <div class="grid-types">
+            <span *ngFor="let t of pokemon.types" class="grid-type-badge" [class]="'type-' + t.type.name">
+              {{ t.type.name | uppercase }}
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Error -->
+      <div *ngIf="errorMessage && !isLoading" class="error-message">
+        <p>{{ errorMessage }}</p>
+        <button class="retry-btn" (click)="retryLoad()">Reintentar</button>
+      </div>
+      
+      <!-- Sin resultados de búsqueda -->
+      <div *ngIf="!isLoading && !errorMessage && pokemons.length === 0 && isSearchMode" class="no-data">
+        <p>No se encontró el Pokémon "{{ searchTerm }}"</p>
+        <button class="retry-btn" (click)="backToGallery()">Ver todos</button>
+      </div>
+
+      <!-- Paginación -->
+      <div class="pagination" *ngIf="!isLoading && !errorMessage && !isSearchMode">
+        <button class="pagination-btn" (click)="previousPage()" [disabled]="currentOffset === 0">
+          ← Anterior
+        </button>
+        <span class="pagination-info">Página {{ (currentOffset / limit) + 1 }}</span>
+        <button class="pagination-btn" (click)="nextPage()">
+          Siguiente →
+        </button>
+      </div>
+      
+      <!-- Botón volver a galería en modo búsqueda -->
+      <div class="pagination" *ngIf="isSearchMode && !isLoading && pokemons.length > 0">
+        <button class="pagination-btn" (click)="backToGallery()">
+          ← Volver a la galería
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

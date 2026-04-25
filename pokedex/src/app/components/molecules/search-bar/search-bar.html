@@ -1,0 +1,23 @@
+<div class="search-bar">
+  <div class="search-bar__input">
+    <app-input
+      [value]="searchTerm"
+      [placeholder]="placeholder"
+      (valueChange)="onInputChange($event)"
+      (keyup.enter)="onSearch()">
+    </app-input>
+  </div>
+  <div class="search-bar__actions">
+    <app-button 
+      label="BUSCAR"
+      variant="primary"
+      (clicked)="onSearch()">
+    </app-button>
+    <app-button 
+      *ngIf="searchTerm"
+      label="Limpiar"
+      variant="secondary"
+      (clicked)="onClear()">
+    </app-button>
+  </div>
+</div>

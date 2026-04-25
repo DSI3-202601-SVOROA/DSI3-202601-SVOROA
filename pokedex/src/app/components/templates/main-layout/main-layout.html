@@ -1,0 +1,16 @@
+<div class="main-layout">
+  <!-- Slot para el header -->
+  <header class="main-layout__header">
+    <ng-content select="[header]"></ng-content>
+  </header>
+
+  <!-- Slot para el contenido principal -->
+  <main class="main-layout__content">
+    <ng-content></ng-content>
+  </main>
+
+  <!-- Slot para el footer -->
+  <footer class="main-layout__footer">
+    <ng-content select="[footer]"></ng-content>
+  </footer>
+</div>

@@ -1,0 +1,16 @@
+<app-main-layout>
+  <!-- Header slot -->
+  <div header>
+    <app-header 
+      title="Pokédex"
+      (search)="onSearch($event)">
+    </app-header>
+  </div>
+
+  <!-- Content -->
+  <app-pokemon-gallery
+    [pokemons]="pokemons"
+    [isLoading]="isLoading"
+    (pokemonClick)="onPokemonClick($event)">
+  </app-pokemon-gallery>
+</app-main-layout>
