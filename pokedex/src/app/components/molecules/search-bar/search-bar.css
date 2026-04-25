@@ -1,0 +1,30 @@
+.search-bar {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.search-bar__input {
+  flex: 1;
+}
+
+.search-bar__actions {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-bar__actions {
+    justify-content: stretch;
+  }
+  
+  .search-bar__actions app-button {
+    flex: 1;
+  }
+}

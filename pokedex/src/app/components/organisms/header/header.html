@@ -1,0 +1,13 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__logo">
+      <h1 class="header__title">{{ title }}</h1>
+    </div>
+    <div class="header__search">
+      <app-search-bar 
+        [placeholder]="placeholder"
+        (search)="onSearch($event)">
+      </app-search-bar>
+    </div>
+  </div>
+</header>

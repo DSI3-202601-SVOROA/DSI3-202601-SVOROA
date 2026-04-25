@@ -1,0 +1,26 @@
+<div class="pokemon-detail" *ngIf="pokemon">
+  <div class="pokemon-detail__header">
+    <div class="pokemon-detail__image">
+      <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+      <!-- Si da error front_shiny, elimina esta línea -->
+      <!-- <img *ngIf="pokemon.sprites.front_shiny" [src]="pokemon.sprites.front_shiny" [alt]="pokemon.name + ' shiny'"> -->
+    </div>
+    <div class="pokemon-detail__info">
+      <span class="pokemon-detail__number">#{{ pokemon.id | number:'3.0-0' }}</span>
+      <h2 class="pokemon-detail__name">{{ pokemon.name | uppercase }}</h2>
+      <div class="pokemon-detail__types">
+        <app-type-badge 
+          *ngFor="let t of pokemon.types"
+          [type]="t.type.name">
+        </app-type-badge>
+      </div>
+    </div>
+  </div>
+  
+  <div class="pokemon-detail__stats">
+    <app-pokemon-stats 
+      [stats]="getStats()" 
+      title="ESTADISTICAS BASE">
+    </app-pokemon-stats>
+  </div>
+</div>

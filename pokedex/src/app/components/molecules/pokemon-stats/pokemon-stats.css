@@ -1,0 +1,19 @@
+.pokemon-stats {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 16px;
+}
+
+.pokemon-stats__title {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.pokemon-stats__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

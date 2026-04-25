@@ -1,0 +1,15 @@
+<div class="pokemon-card" (click)="onClick()">
+  <div class="pokemon-card__image">
+    <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+  </div>
+  <div class="pokemon-card__info">
+    <span class="pokemon-card__number">#{{ pokemon.id | number:'3.0-0' }}</span>
+    <h3 class="pokemon-card__name">{{ pokemon.name | uppercase }}</h3>
+    <div class="pokemon-card__types">
+      <app-type-badge 
+        *ngFor="let t of pokemon.types" 
+        [type]="t.type.name">
+      </app-type-badge>
+    </div>
+  </div>
+</div>
